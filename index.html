@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Corn Yield Estimator</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Ears per 18 feet</td>
+                <td><input onchange="estimateYield();" type="number" id="earsPerLengthInput" value="20"/></td>
+            </tr>
+            <tr>
+                <td>Row Width (in.)</td>
+                <td><input onchange="estimateYield();" type="number" id="rowWidthInput" value="18"/></td>
+            </tr>
+            <tr>
+                <td>Kernels per Bushel</td>
+                <td><input onchange="estimateYield();" type="number" id="kernelsPerBushelInput" value="750"/></td>
+            </tr>
+        </table>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Kernels per Band</th>
+                    <th>Bands per Ear</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <button onclick="addRow()">Add Row</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div id="estimateOutput"></div>
+        <template id="rowTemplate">
+            <tr>
+                <td><button class="removeButton">🗑️</button></td>
+                <td><input onchange="estimateYield();" type="number" class="kernelsPerBandInput" value="20"/></td>
+                <td><input onchange="estimateYield();" type="number" class="bandsPerEarInput" value="20" /></td>
+            </tr>
+        </template>
+        <script src="index.js"></script>
+    </body>
+</html>
